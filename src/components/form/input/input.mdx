@@ -1,0 +1,30 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as InputStories from './input.stories.tsx';
+
+<Meta of={InputStories} />
+
+# Input
+
+The **Input** component allows users to enter and edit text.  
+It supports different input types, sizes, and variants, including password visibility toggles and dark mode support.
+
+<Primary />
+
+## Controls
+
+<Controls />
+
+## Stories
+
+### Default
+A standard text input.
+<Story of={InputStories.Default} />
+
+### Password
+An input field with a toggleable password visibility icon.
+<Story of={InputStories.Password} />
+
+### Search
+A search field with type="search".
+<Story of={InputStories.Search} />
+

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Button } from './button';
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: 'Components/Form/Button',
   component: Button,
   args: {
     children: 'Button',
@@ -24,6 +24,7 @@ const meta: Meta<typeof Button> = {
       name: 'Variant',
       description: 'Variant of the button',
       control: 'select',
+      options: ['primary', 'secondary', 'destructive'],
       table: {
         defaultValue: {
             summary: 'primary',
@@ -33,6 +34,7 @@ const meta: Meta<typeof Button> = {
     size: {
       name: 'Size',
       control: 'select',
+      options: ['small', 'medium', 'large'],
       description: 'Size of the button',
       table: {
         defaultValue: {
@@ -75,20 +77,21 @@ export const Destructive: Story = {
     },
 };
 
-export const Small: Story = {
-    args:{
-        size: 'small',
-    }
-}
+// export const Small: Story = {
+//     args:{
+//         size: 'small',
+//     }
+// }
 
-export const Medium: Story = {
-    args:{
-        size: 'medium',
-    }
-}
+// export const Medium: Story = {
+//     args:{
+//         size: 'medium',
+//     }
+// }
 
-export const Large: Story = {
-    args:{
-        size: 'large',
-    }
-}
+// export const Large: Story = {
+//     args:{
+//         size: 'large',
+//     }
+// }
+
