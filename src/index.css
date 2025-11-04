@@ -7,14 +7,14 @@
 @theme {
   --font-sans: "Inter Variable", sans-serif;
 }
-
+/* 
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
 [data-theme='dark'] body {
   @apply bg-slate-900 text-slate-100;
