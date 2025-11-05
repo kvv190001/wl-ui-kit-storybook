@@ -1,0 +1,24 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+
+import * as BreadcrumbsStories from './breadcrumbs.stories.tsx';
+
+<Meta of={BreadcrumbsStories} />
+
+# Breadcrumbs
+
+A breadcrumb trail helps users understand their location within the application's hierarchy.  
+Each item can be a link or static label.
+
+<Primary />
+
+## Controls
+
+<Controls />
+
+## Stories
+
+### Default
+
+A breadcrumb trail showing the user's current location.
+
+<Story of={BreadcrumbsStories.Default} />

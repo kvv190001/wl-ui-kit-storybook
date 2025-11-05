@@ -1,0 +1,29 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+
+import * as ButtonStories from './button.stories.tsx';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+A button is ...
+
+<Primary />
+
+## Controls
+
+<Controls />
+
+## Stories
+
+### Primary
+
+A button can be of primary importance.
+
+<Story of={ButtonStories.Primary} />
+
+A button can be of secondary importance.
+
+<Story of={ButtonStories.Secondary} />
+
+{/* ... */}

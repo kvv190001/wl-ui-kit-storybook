@@ -1,0 +1,25 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+import * as AlertStories from './alert.stories.tsx';
+
+<Meta of={AlertStories} />
+
+# Alert
+
+Displays important feedback messages.
+
+<Primary />
+
+## Controls
+
+<Controls />
+
+## Stories
+
+### Info
+<Story of={AlertStories.Info} />
+
+### Success
+<Story of={AlertStories.Success} />
+
+### Error
+<Story of={AlertStories.Error} />
