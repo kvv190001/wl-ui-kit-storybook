@@ -1,0 +1,47 @@
+{
+  "name": "angular-latest",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "storybook": "ng run angular-latest:storybook --port 7008",
+    "build-storybook": "ng run angular-latest:build-storybook"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^20.3.0",
+    "@angular/compiler": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "@angular/forms": "^20.3.0",
+    "@angular/platform-browser": "^20.3.0",
+    "@angular/router": "^20.3.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^20.3.0",
+    "@angular/build": "^20.3.9",
+    "@angular/cli": "^20.3.9",
+    "@angular/compiler-cli": "^20.3.0",
+    "@compodoc/compodoc": "^1.1.32",
+    "@storybook/addon-docs": "^10.0.5",
+    "@storybook/angular": "^10.0.5",
+    "storybook": "^10.0.5",
+    "typescript": "~5.9.2"
+  }
+}
