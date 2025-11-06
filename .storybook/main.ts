@@ -18,7 +18,7 @@ const config: StorybookConfig = {
   },
   refs: {
     angular: {
-      title: 'Angular Components',
+      title: 'Angular',
       url: 'http://localhost:7008', // <-- the Angular storybook port
     },
   },

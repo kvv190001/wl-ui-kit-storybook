@@ -50,9 +50,26 @@ npm install
 
 This command will download and install all the packages listed in `package.json`.
 
-### 2. Start Storybook
+### 2. Start Angular Storybook
 
-To run the component library in development mode with Storybook:
+Run this command:
+
+```
+npm run storybook:angular
+```
+
+This will start the Angular Storybook development server, and it should automatically open in your browser at:
+```
+http://localhost:7008
+```
+
+If it doesn't open automatically, you can manually navigate to `http://localhost:7008` in your web browser.
+
+#### Note: Make sure that the localhost:7008 run first before starting the next step
+
+### 3. Run Both Storybooks Together
+
+To run both the React + Angular component library in development mode with Storybook:
 
 ```bash
 npm run storybook
@@ -89,6 +106,7 @@ This component library includes:
 ## Technology Stack
 
 - **React 18** with TypeScript
+- **Angular 20** with TypeScript
 - **Vite** for build tooling
 - **Tailwind CSS** for styling
 - **Storybook** for component documentation
