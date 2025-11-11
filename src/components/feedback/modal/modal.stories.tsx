@@ -16,7 +16,7 @@ const DemoModal = () => {
 };
 
 const meta: Meta<typeof DemoModal> = {
-  title: 'Components/Feedback/Modal',
+  title: 'React Components/Feedback/Modal',
   component: DemoModal,
 };
 export default meta;

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Progress, Skeleton } from './progress-bar';
 
 const meta: Meta<typeof Progress> = {
-  title: 'Components/Feedback/Progress Bar',
+  title: 'React Components/Feedback/Progress Bar',
   component: Progress,
   args: {
     value: 50,

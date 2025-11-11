@@ -86,7 +86,8 @@ If it doesn't open automatically, you can manually navigate to `http://localhost
 
 This project includes several npm scripts for different tasks:
 
-- **`npm run storybook`** - Start Storybook development server (runs on port 6006)
+- **`npm run storybook`** - Start React Storybook development server (runs on port 6006)
+- **`npm run storybook:Angular`** - Start Angular Storybook development server (runs on port 7008)
 - **`npm run dev`** - Start Vite development server
 - **`npm run build`** - Build the project for production (TypeScript compilation + Vite build)
 - **`npm run lint`** - Run ESLint to check code quality

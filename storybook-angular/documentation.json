@@ -64,73 +64,36 @@
         },
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
+            "id": "component-ButtonComponent-8578cce9cbdec57224cfdf74ee3e15d06d7f80b9cfc55c123e0f8808a3d19387276a1c7bf59799d421b5010567f0286218c5111b6621e320b699e8a98a330014",
             "file": "src/components/form/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "storybook-button",
-            "styleUrls": [
-                "./button.css"
-            ],
+            "selector": "app-button",
+            "styleUrls": [],
             "styles": [],
-            "template": " <button  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>",
+            "template": "<button\n  [class]=\"buttonClasses\"\n  [type]=\"type\"\n  [disabled]=\"disabled\"\n  (click)=\"handleClick($event)\">\n  <ng-content></ng-content>\n</button>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "backgroundColor",
+                    "name": "className",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\nWhat background color to use",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 25,
+                    "line": 28,
                     "type": "string",
                     "decorators": []
                 },
                 {
-                    "name": "label",
-                    "defaultValue": "'Button'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 760,
-                            "end": 773,
-                            "kind": 328,
-                            "id": 0,
-                            "flags": 16842752,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "tagName": {
-                                "pos": 761,
-                                "end": 769,
-                                "kind": 80,
-                                "id": 0,
-                                "flags": 16842752,
-                                "transformFlags": 0,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 37,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
+                    "name": "disabled",
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\nIs this the principal call to action on the page?",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 21,
+                    "line": 26,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -139,10 +102,26 @@
                     "defaultValue": "'medium'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\nHow large should the button be?",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 29,
-                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "line": 25,
+                    "type": "ButtonSize",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 27,
+                    "type": "\"button\" | \"submit\" | \"reset\"",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "ButtonVariant",
                     "decorators": []
                 }
             ],
@@ -152,14 +131,87 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "rawdescription": "\nOptional click handler",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 41,
+                    "line": 29,
                     "type": "EventEmitter"
                 }
             ],
-            "propertiesClass": [],
-            "methodsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "baseClasses",
+                    "defaultValue": "[\r\n    'font-semibold',\r\n    'border',\r\n    'rounded',\r\n    'shadow-sm',\r\n    'inline-flex',\r\n    'items-center',\r\n    'cursor-pointer',\r\n    'gap-1.5',\r\n    'focus-visible:outline',\r\n    'focus-visible:outline-2',\r\n    'focus-visible:outline-offset-2',\r\n    'transition-colors',\r\n    'disabled:opacity-50',\r\n    'disabled:cursor-not-allowed',\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 32,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                },
+                {
+                    "name": "sizeClasses",
+                    "defaultValue": "{\r\n    small: ['text-sm', 'px-2', 'py-1'],\r\n    medium: ['text-sm', 'px-2.5', 'py-1.5'],\r\n    large: ['text-sm', 'px-3', 'py-2'],\r\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Record<ButtonSize | string[]>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 86,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                },
+                {
+                    "name": "variantClasses",
+                    "defaultValue": "{\r\n    primary: [\r\n      'bg-blue-600',\r\n      'text-white',\r\n      'border-transparent',\r\n      'hover:bg-blue-500',\r\n      'active:bg-blue-400',\r\n      'dark:bg-blue-500',\r\n      'dark:hover:bg-blue-400',\r\n      'dark:active:bg-blue-300',\r\n    ],\r\n    secondary: [\r\n      'bg-white',\r\n      'text-slate-900',\r\n      'border-slate-300',\r\n      'hover:bg-slate-50',\r\n      'active:bg-slate-100',\r\n      'dark:bg-slate-800',\r\n      'dark:text-slate-100',\r\n      'dark:border-slate-700',\r\n      'dark:hover:bg-slate-700',\r\n      'dark:active:bg-slate-600',\r\n    ],\r\n    destructive: [\r\n      'bg-red-600',\r\n      'text-white',\r\n      'border-transparent',\r\n      'hover:bg-red-500',\r\n      'active:bg-red-400',\r\n      'dark:bg-red-500',\r\n      'dark:hover:bg-red-400',\r\n      'dark:active:bg-red-300',\r\n    ],\r\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Record<ButtonVariant | string[]>",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 50,
+                    "modifierKind": [
+                        123,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handleClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 103,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -174,24 +226,19 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nexport type ButtonVariant = 'primary' | 'secondary' | 'destructive';\r\nexport type ButtonSize = 'small' | 'medium' | 'large';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [CommonModule],\r\n  template: `\r\n    <button \r\n      [class]=\"buttonClasses\"\r\n      [type]=\"type\"\r\n      [disabled]=\"disabled\"\r\n      (click)=\"handleClick($event)\">\r\n      <ng-content></ng-content>\r\n    </button>\r\n  `,\r\n  styles: []\r\n})\r\nexport class ButtonComponent {\r\n  @Input() variant: ButtonVariant = 'primary';\r\n  @Input() size: ButtonSize = 'medium';\r\n  @Input() disabled: boolean = false;\r\n  @Input() type: 'button' | 'submit' | 'reset' = 'button';\r\n  @Input() className: string = '';\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  // Base classes applied to all buttons\r\n  private readonly baseClasses = [\r\n    'font-semibold',\r\n    'border',\r\n    'rounded',\r\n    'shadow-sm',\r\n    'inline-flex',\r\n    'items-center',\r\n    'cursor-pointer',\r\n    'gap-1.5',\r\n    'focus-visible:outline',\r\n    'focus-visible:outline-2',\r\n    'focus-visible:outline-offset-2',\r\n    'transition-colors',\r\n    'disabled:opacity-50',\r\n    'disabled:cursor-not-allowed',\r\n  ];\r\n\r\n  // Variant classes\r\n  private readonly variantClasses: Record<ButtonVariant, string[]> = {\r\n    primary: [\r\n      'bg-blue-600',\r\n      'text-white',\r\n      'border-transparent',\r\n      'hover:bg-blue-500',\r\n      'active:bg-blue-400',\r\n      'dark:bg-blue-500',\r\n      'dark:hover:bg-blue-400',\r\n      'dark:active:bg-blue-300',\r\n    ],\r\n    secondary: [\r\n      'bg-white',\r\n      'text-slate-900',\r\n      'border-slate-300',\r\n      'hover:bg-slate-50',\r\n      'active:bg-slate-100',\r\n      'dark:bg-slate-800',\r\n      'dark:text-slate-100',\r\n      'dark:border-slate-700',\r\n      'dark:hover:bg-slate-700',\r\n      'dark:active:bg-slate-600',\r\n    ],\r\n    destructive: [\r\n      'bg-red-600',\r\n      'text-white',\r\n      'border-transparent',\r\n      'hover:bg-red-500',\r\n      'active:bg-red-400',\r\n      'dark:bg-red-500',\r\n      'dark:hover:bg-red-400',\r\n      'dark:active:bg-red-300',\r\n    ],\r\n  };\r\n\r\n  // Size classes\r\n  private readonly sizeClasses: Record<ButtonSize, string[]> = {\r\n    small: ['text-sm', 'px-2', 'py-1'],\r\n    medium: ['text-sm', 'px-2.5', 'py-1.5'],\r\n    large: ['text-sm', 'px-3', 'py-2'],\r\n  };\r\n\r\n  get buttonClasses(): string {\r\n    return [\r\n      ...this.baseClasses,\r\n      ...this.variantClasses[this.variant],\r\n      ...this.sizeClasses[this.size],\r\n      this.className,\r\n    ]\r\n      .filter(Boolean)\r\n      .join(' ');\r\n  }\r\n\r\n  handleClick(event: Event): void {\r\n    if (!this.disabled) {\r\n      this.onClick.emit(event);\r\n    }\r\n  }\r\n}",
             "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #555ab9;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
-                    "styleUrl": "./button.css"
-                }
-            ],
+            "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
             "accessors": {
-                "classes": {
-                    "name": "classes",
+                "buttonClasses": {
+                    "name": "buttonClasses",
                     "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 43
+                        "name": "buttonClasses",
+                        "type": "string",
+                        "returnType": "string",
+                        "line": 92
                     }
                 }
             }
@@ -222,7 +269,30 @@
             }
         ],
         "functions": [],
-        "typealiases": [],
+        "typealiases": [
+            {
+                "name": "ButtonSize",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"small\" | \"medium\" | \"large\"",
+                "file": "src/components/form/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ButtonVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"secondary\" | \"destructive\"",
+                "file": "src/components/form/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            }
+        ],
         "enumerations": [],
         "groupedVariables": {
             "src/app/app.config.ts": [
@@ -252,7 +322,32 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
-        "groupedTypeAliases": {}
+        "groupedTypeAliases": {
+            "src/components/form/button.component.ts": [
+                {
+                    "name": "ButtonSize",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"small\" | \"medium\" | \"large\"",
+                    "file": "src/components/form/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "ButtonVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"secondary\" | \"destructive\"",
+                    "file": "src/components/form/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ]
+        }
     },
     "routes": {
         "name": "<root>",
@@ -260,7 +355,7 @@
         "children": []
     },
     "coverage": {
-        "count": 20,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -297,9 +392,29 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
-                "status": "very-good"
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/form/button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonSize",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/form/button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             }
         ]
     }
