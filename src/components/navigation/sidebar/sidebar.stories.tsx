@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Sidebar } from './sidebar';
 
 const meta: Meta<typeof Sidebar> = {
-  title: 'Components/Navigation/Sidebar',
+  title: 'React Components/Navigation/Sidebar',
   component: Sidebar,
   args: {
     width: 'md',

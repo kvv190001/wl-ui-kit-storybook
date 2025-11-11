@@ -3,7 +3,7 @@ import { Tooltip } from './tooltip';
 import { Button } from '../../form/button/button';
 
 const meta: Meta<typeof Tooltip> = {
-  title: 'Components/Feedback/Tooltip',
+  title: 'React Components/Feedback/Tooltip',
   component: Tooltip,
   args: {
     text: 'Tooltip text',

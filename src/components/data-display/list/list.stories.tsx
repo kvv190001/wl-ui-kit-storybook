@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { List, ListItem } from './list';
 
 const meta: Meta<typeof List> = {
-  title: 'Components/Data Display/List',
+  title: 'React Components/Data Display/List',
   component: List,
   args: {
     children: (

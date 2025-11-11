@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Tabs } from './tabs';
 
 const meta: Meta<typeof Tabs> = {
-  title: 'Components/Data Display/Tabs',
+  title: 'React Components/Data Display/Tabs',
   component: Tabs,
   args: {
     variant: 'underline',

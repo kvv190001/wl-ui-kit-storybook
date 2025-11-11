@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Select } from './select';
 
 const meta: Meta<typeof Select> = {
-  title: 'Components/Form/Select',
+  title: 'React Components/Form/Select',
   component: Select,
   args: {
     disabled: false,

@@ -8,7 +8,7 @@ const data = [
 ];
 
 const meta: Meta<typeof Table> = {
-  title: 'Components/Data Display/Table',
+  title: 'React Components/Data Display/Table',
   component: Table,
   args: {
     data,
