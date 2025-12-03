@@ -82,22 +82,3 @@ export const Shadow: Story = {
         variant: 'shadow',
     },
 };
-
-// export const Small: Story = {
-//     args:{
-//         size: 'small',
-//     }
-// }
-
-// export const Medium: Story = {
-//     args:{
-//         size: 'medium',
-//     }
-// }
-
-// export const Large: Story = {
-//     args:{
-//         size: 'large',
-//     }
-// }
-
