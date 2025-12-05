@@ -113,11 +113,9 @@ export const SizeSelection: Story = {
         labelPosition: 'right',
         size: 'large',
         options: [
-            { value: 'xs', label: 'Extra Small' },
             { value: 's', label: 'Small' },
             { value: 'm', label: 'Medium' },
             { value: 'l', label: 'Large' },
-            { value: 'xl', label: 'Extra Large' },
         ],
         defaultValue: 'm',
     },
