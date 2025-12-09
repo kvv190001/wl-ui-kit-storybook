@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RadioGroup } from './radio-group';
 
 const meta: Meta<typeof RadioGroup> = {
-    title: 'React Components/Form/RadioGroup',
+    title: 'WorldLink Components/Form/RadioGroup',
     component: RadioGroup,
     args: {
         name: 'demo-group',
@@ -103,20 +103,5 @@ export const LabelBottom: Story = {
             { value: 'm', label: 'Option 2' },
             { value: 'l', label: 'Option 3' },
         ],
-    },
-};
-
-export const SizeSelection: Story = {
-    args: {
-        name: 'size',
-        orientation: 'horizontal',
-        labelPosition: 'right',
-        size: 'large',
-        options: [
-            { value: 's', label: 'Small' },
-            { value: 'm', label: 'Medium' },
-            { value: 'l', label: 'Large' },
-        ],
-        defaultValue: 'm',
     },
 };

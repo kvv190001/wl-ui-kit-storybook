@@ -1,6 +1,6 @@
 {
-  "name": "wl-ui-kit-storybook",
-  "private": true,
+  "name": "@kvv190001/wl-ui-kit-storybook",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -52,5 +52,8 @@
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.7",
     "vitest": "^4.0.5"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }

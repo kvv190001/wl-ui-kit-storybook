@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { RadioButton } from './radio-button';
 
 const meta: Meta<typeof RadioButton> = {
-    title: 'React Components/Form/RadioButton',
+    title: 'WorldLink Components/Form/RadioButton',
     component: RadioButton,
     args: {
         label: 'Option',

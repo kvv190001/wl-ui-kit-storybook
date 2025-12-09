@@ -4,7 +4,7 @@ import { Checkbox } from './checkbox';
 
 
 const meta: Meta<typeof Checkbox> = {
-  title: "React Components/Form/Checkbox",
+  title: "WorldLink Components/Form/Checkbox",
   component: Checkbox,
   args: {
     label: "Label",

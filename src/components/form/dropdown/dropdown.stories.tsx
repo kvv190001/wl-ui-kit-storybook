@@ -11,7 +11,7 @@ const DEFAULT_OPTIONS = [
 ];
 
 const meta: Meta<typeof Dropdown> = {
-  title: 'React Components/Form/Dropdown',
+  title: 'WorldLink Components/Form/Dropdown',
   component: Dropdown,
   args: {
     placeholder: 'Placeholder text',
