@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Container } from './container';
 
 const meta: Meta<typeof Container> = {
-  title: 'Components/Layout/Container',
+  title: 'React Components/Layout/Container',
   component: Container,
   args: {
     size: 'md',

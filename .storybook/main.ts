@@ -15,7 +15,13 @@ const config: StorybookConfig = {
   "framework": {
     "name": "@storybook/react-vite",
     "options": {}
-  }
+  },
+  refs: {
+    angular: {
+      title: 'Angular',
+      url: 'http://localhost:7008', // <-- the Angular storybook port
+    },
+  },
 };
 
 export default config;

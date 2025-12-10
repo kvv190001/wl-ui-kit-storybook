@@ -1,0 +1,504 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "App",
+            "id": "component-App-591ff621d2eb510532a437d428a4193aca9b5e38d7de4e8524a4859f9c9e8e816c41c485b3cdc7867c312fa2c8cfcbd8c10eb936b6ec90cdfb2c0dc41a0e7b28",
+            "file": "src/app/app.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<h1>Welcome to {{ title() }}!</h1>\n\n<router-outlet />\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "signal('angular-latest')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, signal } from '@angular/core';\r\nimport { RouterOutlet } from '@angular/router';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  imports: [RouterOutlet],\r\n  template: `\r\n    <h1>Welcome to {{ title() }}!</h1>\r\n\r\n    <router-outlet />\r\n  `,\r\n  styles: [],\r\n})\r\nexport class App {\r\n  protected readonly title = signal('angular-latest');\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-cd3e501242005ba2ea8fc092b147931497441e5d1c18487abb28bebcd87fd6c47233cbb1cfd25324cbaefc2362046884529c3e4999982228ff12cafbd4fcb10f",
+            "file": "src/components/form/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<button\n  [ngClass]=\"[\n    baseClasses,\n    variantClasses[variant],\n    sizeClasses[size],\n    disabled ? 'opacity-50 cursor-not-allowed' : ''\n  ]\"\n  [disabled]=\"disabled\"\n>\n  <ng-content></ng-content>\n</button>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "\"primary\" | \"secondary\" | \"destructive\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "baseClasses",
+                    "defaultValue": "'inline-flex items-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "sizeClasses",
+                    "defaultValue": "{\r\n    small: 'px-3 py-1 text-sm',\r\n    medium: 'px-4 py-2 text-base',\r\n    large: 'px-6 py-3 text-lg',\r\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 36
+                },
+                {
+                    "name": "variantClasses",
+                    "defaultValue": "{\r\n    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-400',\r\n    secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-400',\r\n    destructive: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-400',\r\n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgClass"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { NgClass } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [NgClass],\r\n  template: `\r\n    <button\r\n      [ngClass]=\"[\r\n        baseClasses,\r\n        variantClasses[variant],\r\n        sizeClasses[size],\r\n        disabled ? 'opacity-50 cursor-not-allowed' : ''\r\n      ]\"\r\n      [disabled]=\"disabled\"\r\n    >\r\n      <ng-content></ng-content>\r\n    </button>\r\n  `,\r\n})\r\nexport class ButtonComponent {\r\n  @Input() variant: 'primary' | 'secondary' | 'destructive' = 'primary';\r\n  @Input() size: 'small' | 'medium' | 'large' = 'medium';\r\n  @Input() disabled = false;\r\n\r\n  baseClasses =\r\n    'inline-flex items-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';\r\n\r\n  variantClasses = {\r\n    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-400',\r\n    secondary: 'bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-400',\r\n    destructive: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-400',\r\n  };\r\n\r\n  sizeClasses = {\r\n    small: 'px-3 py-1 text-sm',\r\n    medium: 'px-4 py-2 text-base',\r\n    large: 'px-6 py-3 text-lg',\r\n  };\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-236849edb4fa165495fbd128bed0a44a1f54775a3a64db73bacdcb8aea1139547e4d8e018cf74bad22f94fe2587fd10ce13911c73d4c313a944fe04108584bab",
+            "file": "src/components/form/checkbox/checkbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-checkbox",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<label\n  class=\"flex items-center gap-2 cursor-pointer select-none\"\n  [class.opacity-50]=\"disabled\"\n>\n  <input\n    type=\"checkbox\"\n    class=\"h-4 w-4 accent-blue-600 dark:accent-blue-400\"\n    [disabled]=\"disabled\"\n    [checked]=\"checked\"\n  />\n\n  <span class=\"text-sm text-gray-800\">{{ label }}</span>\n</label>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "checked",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  standalone: true,\r\n  template: `\r\n    <label\r\n      class=\"flex items-center gap-2 cursor-pointer select-none\"\r\n      [class.opacity-50]=\"disabled\"\r\n    >\r\n      <input\r\n        type=\"checkbox\"\r\n        class=\"h-4 w-4 accent-blue-600 dark:accent-blue-400\"\r\n        [disabled]=\"disabled\"\r\n        [checked]=\"checked\"\r\n      />\r\n\r\n      <span class=\"text-sm text-gray-800\">{{ label }}</span>\r\n    </label>\r\n  `,\r\n})\r\nexport class CheckboxComponent {\r\n  @Input() label = '';\r\n  @Input() checked = false;\r\n  @Input() disabled = false;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "DatepickerComponent",
+            "id": "component-DatepickerComponent-523848ce5ce4816333008423f6583334bfb0c240c90885b3e7b26a583ed0265ca206121a4b6d3a7a135f56406414a0706fee764a3981fae1a3329ef9a8131537",
+            "file": "src/components/form/datepicker/datepicker.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-datepicker",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<input\n  type=\"date\"\n  class=\"rounded border border-slate-300 bg-white px-3 py-1.5 text-sm shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors\"\n  [disabled]=\"disabled\"\n/>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\n\r\n@Component({\r\n  selector: 'app-datepicker',\r\n  standalone: true,\r\n  template: `\r\n    <input\r\n      type=\"date\"\r\n      class=\"rounded border border-slate-300 bg-white px-3 py-1.5 text-sm shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 dark:bg-slate-800 dark:border-slate-700 dark:text-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors\"\r\n      [disabled]=\"disabled\"\r\n    />\r\n  `,\r\n})\r\nexport class DatepickerComponent {\r\n  @Input() disabled = false;\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "InputComponent",
+            "id": "component-InputComponent-da122968b180938794d961d7cad7d8cfd592bbfb0d926c7856bcf5ced0f85f85f828bd891b56e7238e6c88470e2b6bdaa6a048f59be6962df05e3c920bf1ddd2",
+            "file": "src/components/form/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<input\n  [type]=\"type\"\n  [placeholder]=\"placeholder\"\n  [disabled]=\"disabled\"\n  [ngClass]=\"classes\"\n/>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "\"text\" | \"password\" | \"search\"",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "\"default\" | \"error\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgClass"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { NgClass } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'app-input',\r\n  standalone: true,\r\n  imports: [NgClass],\r\n  template: `\r\n    <input\r\n      [type]=\"type\"\r\n      [placeholder]=\"placeholder\"\r\n      [disabled]=\"disabled\"\r\n      [ngClass]=\"classes\"\r\n    />\r\n  `,\r\n})\r\nexport class InputComponent {\r\n  @Input() placeholder = '';\r\n  @Input() disabled = false;\r\n\r\n  @Input() variant: 'default' | 'error' = 'default';\r\n  @Input() size: 'small' | 'medium' | 'large' = 'medium';\r\n  @Input() type: 'text' | 'password' | 'search' = 'text';\r\n\r\n  get classes() {\r\n    return {\r\n      // base\r\n      'border rounded outline-none w-full': true,\r\n\r\n      // disabled\r\n      'bg-gray-100 text-gray-500 cursor-not-allowed': this.disabled,\r\n\r\n      // variant\r\n      'border-gray-300': this.variant === 'default',\r\n      'border-red-500': this.variant === 'error',\r\n\r\n      // sizes\r\n      'px-2 py-1 text-sm': this.size === 'small',\r\n      'px-3 py-2': this.size === 'medium',\r\n      'px-4 py-3 text-lg': this.size === 'large',\r\n    };\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "",
+                        "returnType": "",
+                        "line": 25
+                    }
+                }
+            }
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [\r\n    provideBrowserGlobalErrorListeners(),\r\n    provideZoneChangeDetection({ eventCoalescing: true }),\r\n    provideRouter(routes)\r\n  ]\r\n}"
+            },
+            {
+                "name": "routes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.routes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Routes",
+                "defaultValue": "[]"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [\r\n    provideBrowserGlobalErrorListeners(),\r\n    provideZoneChangeDetection({ eventCoalescing: true }),\r\n    provideRouter(routes)\r\n  ]\r\n}"
+                }
+            ],
+            "src/app/app.routes.ts": [
+                {
+                    "name": "routes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.routes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Routes",
+                    "defaultValue": "[]"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.routes.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "routes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "App",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/form/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/form/checkbox/checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/form/datepicker/datepicker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DatepickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/components/form/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            }
+        ]
+    }
+}

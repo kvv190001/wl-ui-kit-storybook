@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Card } from './card';
 
 const meta: Meta<typeof Card> = {
-  title: 'Components/Data Display/Card',
+  title: 'React Components/Data Display/Card',
   component: Card,
   args: {
     children: 'This is a card content area.',

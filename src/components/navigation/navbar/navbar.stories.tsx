@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Navbar } from './navbar';
 
 const meta: Meta<typeof Navbar> = {
-  title: 'Components/Navigation/Navbar',
+  title: 'React Components/Navigation/Navbar',
   component: Navbar,
   args: {
     position: 'static',

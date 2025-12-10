@@ -1,12 +1,12 @@
 import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+
 import * as RadioGroupStories from './radio-group.stories.tsx';
 
 <Meta of={RadioGroupStories} />
 
-# Radio Group
+# RadioGroup
 
-The **Radio Group** allows users to select exactly one option from a set.  
-Each radio button supports dark mode and is grouped by a shared `name` attribute.
+A radio group is a collection of radio buttons that work together to allow users to select a single option from multiple choices. All radio buttons within a group share the same name attribute, ensuring mutual exclusivity of selections.
 
 <Primary />
 
@@ -16,6 +16,20 @@ Each radio button supports dark mode and is grouped by a shared `name` attribute
 
 ## Stories
 
-### Default
-A simple radio group.
-<Story of={RadioGroupStories.Default} />
+### Vertical
+
+A radio group can be arranged vertically (default layout).
+
+<Story of={RadioGroupStories.Vertical} />
+
+### Horizontal
+
+A radio group can be arranged horizontally in a single row.
+
+<Story of={RadioGroupStories.Horizontal} />
+
+### Label Bottom
+
+A radio group can have labels positioned below each radio button.
+
+<Story of={RadioGroupStories.LabelBottom} />

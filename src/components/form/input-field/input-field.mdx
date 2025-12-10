@@ -1,0 +1,47 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+
+import * as InputFieldStories from './input-field.stories.tsx';
+
+<Meta of={InputFieldStories} />
+
+# InputField
+
+An input field component with support for labels and optional left-aligned icons. It follows the design system established by the Searchbox component.
+
+<Primary />
+
+## Controls
+
+<Controls />
+
+## Stories
+
+### Default
+
+Input field with a no label.
+
+<Story of={InputFieldStories.Default} />
+
+### With Icon
+
+Input field with a search icon and label.
+
+<Story of={InputFieldStories.WithIcon} />
+
+### Label Bottom
+
+Input field with a bottom-aligned label.
+
+<Story of={InputFieldStories.LabelBottom} />
+
+### Label Top
+
+Input field with a top-aligned label.
+
+<Story of={InputFieldStories.LabelTop} />
+
+### Error
+
+Input field with dark background variant and top label.
+
+<Story of={InputFieldStories.Error} />

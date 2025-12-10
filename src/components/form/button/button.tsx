@@ -7,9 +7,9 @@ export const variants = cva(
         'font-semibold',
         'border',
         'rounded',
-        'shadow-sm',
         'inline-flex',
         'items-center',
+        'justify-center',
         'cursor-pointer',
         'gap-1.5',
         'focus-visible:outline',
@@ -24,45 +24,55 @@ export const variants = cva(
         variants: {
             variant: {
                 primary: [
-                    'bg-blue-600',
+                    'bg-rose-500',
                     'text-white',
                     'border-transparent',
-                    'hover:bg-blue-500',
-                    'active:bg-blue-400',
+                    'hover:bg-red-600',
+                    'active:bg-red-400',
+                    'shadow-sm'
+                    // 'disabled:bg-red-200'
                     // 🌙 dark mode
-                    'dark:bg-blue-500',
-                    'dark:hover:bg-blue-400',
-                    'dark:active:bg-blue-300',
+                    //'dark:bg-blue-500',
+                    //'dark:hover:bg-blue-400',
+                    //'dark:active:bg-blue-300',
                 ],
                 secondary: [
                     'bg-white',
                     'text-slate-900',
-                    'border-slate-300',
-                    'hover:bg-slate-50',
-                    'active:bg-slate-100',
+                    'border-transparent',
+                    'hover:bg-neutral-100',
+                    'active:bg-neutral-200',
+                    'shadow-sm'
+                    // 'disabled:bg-zinc-100',
                     // 🌙 dark mode
-                    'dark:bg-slate-800',
-                    'dark:text-slate-100',
-                    'dark:border-slate-700',
-                    'dark:hover:bg-slate-700',
-                    'dark:active:bg-slate-600',
+                    // 'dark:bg-slate-800',
+                    // 'dark:text-slate-100',
+                    // 'dark:border-slate-700',
+                    // 'dark:hover:bg-slate-700',
+                    // 'dark:active:bg-slate-600',
                 ],
-                destructive: [
-                    'bg-red-600',
+                outline: [
+                    'bg-white',
+                    'text-slate-900',
+                    'border-neutral-200',
+                    'hover:bg-neutral-100',
+                    'active:bg-neutral-200',
+                    'shadow-sm'
+                ],
+                shadow: [
+                    'bg-rose-500',
                     'text-white',
                     'border-transparent',
-                    'hover:bg-red-500',
+                    'hover:bg-red-600',
                     'active:bg-red-400',
-                    // 🌙 dark mode
-                    'dark:bg-red-500',
-                    'dark:hover:bg-red-400',
-                    'dark:active:bg-red-300',
+                    'shadow-xl'
                 ],
             },
             size: {
-                small: ['text-sm', 'px-2', 'py-1'],
-                medium: ['text-sm', 'px-2.5', 'py-1.5'],
-                large: ['text-sm', 'px-3', 'py-2'],
+                xsmall: ['text-xs', 'w-17', 'h-7'],
+                small: ['text-sm', 'w-20', 'h-8'],
+                medium: ['text-md', 'w-25', 'h-10'],
+                large: ['text-lg', 'w-33', 'h-12'],
             },
         },
         defaultVariants: {

@@ -1,0 +1,35 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+
+import * as RadioButtonStories from './radio-button.stories.tsx';
+
+<Meta of={RadioButtonStories} />
+
+# RadioButton
+
+A radio button is a form control that allows users to select a single option from a group of mutually exclusive choices. Radio buttons are typically used when you want to present multiple options but only one can be selected at a time.
+
+<Primary />
+
+## Controls
+
+<Controls />
+
+## Stories
+
+### No Label
+
+A radio button can be displayed without a label text.
+
+<Story of={RadioButtonStories.NoLabel} />
+
+### Label Right
+
+A radio button can have its label positioned to the right of the input.
+
+<Story of={RadioButtonStories.LabelRight} />
+
+### Label Bottom
+
+A radio button can have its label positioned below the input.
+
+<Story of={RadioButtonStories.LabelBottom} />

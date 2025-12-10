@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { Stack } from './stack';
 
 const meta: Meta<typeof Stack> = {
-  title: 'Components/Layout/Stack',
+  title: 'React Components/Layout/Stack',
   component: Stack,
   args: {
     direction: 'vertical',

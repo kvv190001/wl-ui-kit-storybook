@@ -1,0 +1,43 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+
+import * as DropdownStories from './dropdown.stories.tsx';
+
+<Meta of={DropdownStories} />
+
+# Dropdown
+
+A dropdown is a form element that allows users to select one option from a list.  
+It supports four visual variants—**outline**, **transparent**, **lightBg**, and **darkBg** —and three sizes.
+
+<Primary />
+
+## Controls
+
+<Controls />
+
+## Stories
+
+### Outline
+
+The default outlined dropdown.
+
+<Story of={DropdownStories.Outline} />
+
+### Transparent
+
+A dropdown with a transparent background.
+
+<Story of={DropdownStories.Transparent} />
+
+### LightBg
+
+A dropdown with light background
+
+<Story of={DropdownStories.LightBg} />
+
+### DarkBg
+
+A background with dark background
+
+<Story of={DropdownStories.DarkBg} />
+
