@@ -59,7 +59,7 @@ type DropdownVariants = VariantProps<typeof dropdownVariants>;
 interface DropdownProps extends DropdownVariants {
   placeholder?: string;
   options: Array<{ label: string; icon?: React.ReactNode }>;
-  className: string;
+  className?: string;
 }
 
 export const Dropdown = ({
