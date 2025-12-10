@@ -1,0 +1,36 @@
+name: Deploy Storybook to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]   # or master—use your repo's default branch
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: storybook-static/
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v2
