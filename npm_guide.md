@@ -31,7 +31,7 @@ Add this to your main CSS file:
 /* Adjust the path depending on your project structure */
 ```
 
-### Docker Warning
+### 4. Docker Warning
 If your project runs inside Docker, make sure to copy the .npmrc file before installing dependencies.
 
 Add this line in your Dockerfile:
@@ -41,4 +41,27 @@ COPY .npmrc ./
 right before:
 ```
 RUN npm ci --production=false 
+```
+
+### 5. Example usage with React
+```
+import { Button, Checkbox, Input } from '@kvv190001/wl-ui-kit-storybook';
+
+function YourComponent() {
+  return (
+    <div>
+      <Button variant="primary" size="medium">
+        Click me
+      </Button>
+      
+      <Checkbox label="Accept terms" checked={true} />
+      
+      <Input 
+        placeholder="Enter text..." 
+        variant="default" 
+        size="medium" 
+      />
+    </div>
+  );
+}
 ```
