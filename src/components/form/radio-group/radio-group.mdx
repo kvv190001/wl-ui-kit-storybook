@@ -1,0 +1,35 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+
+import * as RadioGroupStories from './radio-group.stories.tsx';
+
+<Meta of={RadioGroupStories} />
+
+# RadioGroup
+
+A radio group is a collection of radio buttons that work together to allow users to select a single option from multiple choices. All radio buttons within a group share the same name attribute, ensuring mutual exclusivity of selections.
+
+<Primary />
+
+## Controls
+
+<Controls />
+
+## Stories
+
+### Vertical
+
+A radio group can be arranged vertically (default layout).
+
+<Story of={RadioGroupStories.Vertical} />
+
+### Horizontal
+
+A radio group can be arranged horizontally in a single row.
+
+<Story of={RadioGroupStories.Horizontal} />
+
+### Label Bottom
+
+A radio group can have labels positioned below each radio button.
+
+<Story of={RadioGroupStories.LabelBottom} />

@@ -1,0 +1,35 @@
+import { Meta, Primary, Controls, Story } from '@storybook/addon-docs/blocks';
+
+import * as SearchboxStories from './searchbox.stories.tsx';
+
+<Meta of={SearchboxStories} />
+
+# Searchbox
+
+A simple search input styled to match the Button component's design system.
+
+<Primary />
+
+## Controls
+
+<Controls />
+
+## Stories
+
+### Primary
+
+Default searchbox.
+
+<Story of={SearchboxStories.Primary} />
+
+### Dark Background
+
+<Story of={SearchboxStories.DarkBg} />
+
+### Light Background
+
+<Story of={SearchboxStories.LightBg} />
+
+### Transparent
+
+<Story of={SearchboxStories.Transparent} />
