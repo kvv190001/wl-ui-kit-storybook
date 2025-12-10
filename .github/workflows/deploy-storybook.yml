@@ -2,16 +2,17 @@ name: Deploy Storybook to GitHub Pages
 
 on:
   push:
-    branches: [ main ]   # or master—use your repo's default branch
+    branches: [ main ]   # change if needed
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     steps:
       - uses: actions/checkout@v4
@@ -27,10 +28,19 @@ jobs:
       - name: Build Storybook
         run: npm run build-storybook
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload storybook artifact
+        uses: actions/upload-pages-artifact@v3   # UPDATED VERSION
         with:
           path: storybook-static/
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        id: deployment
+        uses: actions/deploy-pages@v4   # UPDATED VERSION
