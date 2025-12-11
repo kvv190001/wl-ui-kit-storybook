@@ -84,7 +84,7 @@ export const variants = cva(
         defaultVariants: {
             variant: 'primary',
             size: 'medium',
-            radius: 'md',
+            radius: 'medium',
         },
     },
 );
