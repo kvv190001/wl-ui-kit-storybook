@@ -124,5 +124,5 @@ If you encounter any issues or have questions, please contact the repository own
 ```
 npm run build:lib
 npm version patch
-npm publish
+npm publish --registry=https://npm.pkg.github.com
 ```

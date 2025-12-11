@@ -27,7 +27,7 @@ const meta: Meta<typeof Button> = {
       options: ['primary', 'secondary', 'outline', 'shadow'],
       table: {
         defaultValue: {
-            summary: 'primary',
+          summary: 'primary',
         },
       },
     },
@@ -38,18 +38,18 @@ const meta: Meta<typeof Button> = {
       description: 'Size of the button',
       table: {
         defaultValue: {
-            summary: 'medium',
+          summary: 'medium',
         },
       },
     },
-        radius: {
+    radius: {
       name: 'Radius',
       control: 'select',
       options: ['none', 'small', 'medium', 'large', 'full'],
       description: 'Border radius of the button',
       table: {
         defaultValue: {
-            summary: 'md',
+          summary: 'medium',
         },
       },
     },
@@ -59,7 +59,7 @@ const meta: Meta<typeof Button> = {
       description: 'Disables the button',
       table: {
         defaultValue: {
-            summary: false,
+          summary: false,
         },
       },
     },
@@ -71,25 +71,25 @@ export default meta;
 type Story = StoryObj<typeof Button>
 
 export const Primary: Story = {
-    args:{
-        variant: 'primary',
-    },
+  args: {
+    variant: 'primary',
+  },
 };
 
 export const Secondary: Story = {
-    args:{
-        variant: 'secondary',
-    },
+  args: {
+    variant: 'secondary',
+  },
 };
 
 export const Outline: Story = {
-    args:{
-        variant: 'outline',
-    },
+  args: {
+    variant: 'outline',
+  },
 };
 
 export const Shadow: Story = {
-    args:{
-        variant: 'shadow',
-    },
+  args: {
+    variant: 'shadow',
+  },
 };
