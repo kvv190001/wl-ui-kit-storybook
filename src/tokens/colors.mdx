@@ -4,8 +4,19 @@ import colors from 'tailwindcss/colors';
 
 <Meta title="React Tokens/Colors" />
 
+# Colors
+
+Learn more about Tailwind CSS fonts here: https://tailwindcss.com/docs/color
+
+
 <ColorPalette>
-  {Object.entries(colors).map(([name, value]) => (
-    <ColorItem key={name} title={name} colors={value} />
-  ))}
+  {Object.entries(colors)
+    .filter(([, value]) => typeof value !== 'string')
+    .map(([name, value]) => {
+      console.log('Name:', name, 'Value:', value);   // 👈 log here
+
+      return (
+        <ColorItem key={name} title={name} colors={value} />
+      );
+    })}
 </ColorPalette>
