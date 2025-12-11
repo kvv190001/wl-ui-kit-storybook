@@ -6,7 +6,6 @@ export const variants = cva(
     [
         'font-semibold',
         'border',
-        'rounded',
         'inline-flex',
         'items-center',
         'justify-center',
@@ -74,10 +73,18 @@ export const variants = cva(
                 medium: ['text-md', 'w-25', 'h-10'],
                 large: ['text-lg', 'w-33', 'h-12'],
             },
+            radius: {
+                none: ['rounded-none'],
+                small: ['rounded-sm'],
+                medium: ['rounded-md'],
+                large: ['rounded-lg'],
+                full: ['rounded-full'],
+            },
         },
         defaultVariants: {
             variant: 'primary',
             size: 'medium',
+            radius: 'medium',
         },
     },
 );
@@ -86,6 +93,6 @@ type ButtonVariants = VariantProps<typeof variants>;
 
 type ButtonProps = ComponentProps<'button'> & ButtonVariants;
 
-export const Button = ({ variant, size, className, ...props }: ButtonProps) => {
-    return <button className={clsx(variants({ variant, size, className }))} {...props} />;
+export const Button = ({ variant, size, radius, className, ...props }: ButtonProps) => {
+    return <button className={clsx(variants({ variant, size, radius, className }))} {...props} />;
 };

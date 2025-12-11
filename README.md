@@ -116,3 +116,13 @@ This component library includes:
 ## Need Help?
 
 If you encounter any issues or have questions, please contact the repository owner or admin.
+
+
+## Note for Developers:
+- The Storybook GUI is auto deployed once the code is pushed to github
+- To update npm packages, run:
+```
+npm run build:lib
+npm version patch
+npm publish
+```

@@ -42,6 +42,17 @@ const meta: Meta<typeof Button> = {
         },
       },
     },
+        radius: {
+      name: 'Radius',
+      control: 'select',
+      options: ['none', 'small', 'medium', 'large', 'full'],
+      description: 'Border radius of the button',
+      table: {
+        defaultValue: {
+            summary: 'md',
+        },
+      },
+    },
     disabled: {
       name: 'Disabled',
       control: 'boolean',
