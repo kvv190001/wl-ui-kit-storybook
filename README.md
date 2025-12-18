@@ -126,3 +126,45 @@ npm run build:lib
 npm version patch
 npm publish --registry=https://npm.pkg.github.com
 ```
+
+## Deploying the Storybook GUI to AWS
+1. Build storybook by creating static files:
+```
+npm run build-storybook
+```
+
+2. Create an S3 bucket:
+- Block all public access: ✅ ON (recommended)
+- CloudFront will access S3 privately via OAC (Origin Access Control)
+
+3. Upload Storybook files to S3
+- Do not upload storybook-static folder to S3, only upload the files inside that folders
+
+4. Create a CloudFront distribution
+- Origin type: Amazon S3
+- Origin access: Enable Origin Access Control (OAC) instead of public bucket access
+- Default root object: index.html
+
+5. Attach S3 bucket policy (IMPORTANT)
+```
+{
+    "Version": "2008-10-17",
+    "Id": "PolicyForCloudFrontPrivateContent",
+    "Statement": [
+        {
+            "Sid": "AllowCloudFrontServicePrincipal",
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "cloudfront.amazonaws.com"
+            },
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::wl-ui-kit-storybook/*",
+            "Condition": {
+                "StringEquals": {
+                    "AWS:SourceArn": "arn:aws:cloudfront::898761058815:distribution/E2Y301L3DZRBPB"
+                }
+            }
+        }
+    ]
+}
+```
